@@ -6,7 +6,10 @@ const lirikApi = async (query) => {
   try {
     const url = `https://www.google.com/search?q=lirik+lagu+${query}`;
 
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+      args: ['--no-sandbox'],
+    });
+
     const page = await browser.newPage();
 
     await page.goto(url);
