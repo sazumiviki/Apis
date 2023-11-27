@@ -8,6 +8,7 @@ const lirikApi = async (query) => {
 
     const browser = await puppeteer.launch({
       args: ['--no-sandbox'],
+      executablePath: '/usr/bin/google-chrome-stable',
     });
 
     const page = await browser.newPage();
@@ -26,7 +27,7 @@ const lirikApi = async (query) => {
 
     const metadata = {};
     const metadataElements = $('div.rVusze');
-    
+
     metadataElements.each((index, element) => {
       const titleElement = $(element).find('span.w8qArf');
       const valueElement = $(element).find('span.LrzXr a');
