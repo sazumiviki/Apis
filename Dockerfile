@@ -9,8 +9,9 @@ COPY package.json .
 
 RUN npm install
 
-# Install Chromium
 RUN apt-get install -y chromium
+
+RUN ln -s /usr/bin/chromium /usr/bin/chromium-browser
 
 COPY . .
 
