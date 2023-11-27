@@ -8,7 +8,7 @@ const lirikApi = async (query) => {
 
     const browser = await puppeteer.launch({
       args: ['--no-sandbox'],
-      executablePath: puppeteer.executablePath(),
+      executablePath: 'chromium-browser',
     });
 
     const page = await browser.newPage();
