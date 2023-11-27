@@ -1,5 +1,5 @@
 const axios = require('axios');
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
 const cheerio = require('cheerio');
 
 const lirikApi = async (query) => {
@@ -8,7 +8,7 @@ const lirikApi = async (query) => {
 
     const browser = await puppeteer.launch({
       args: ['--no-sandbox'],
-      executablePath: '/usr/bin/google-chrome-stable',
+      executablePath: puppeteer.executablePath(),
     });
 
     const page = await browser.newPage();
