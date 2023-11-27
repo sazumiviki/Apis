@@ -1,5 +1,5 @@
 const axios = require('axios');
-const puppeteer = require('puppeteer-core');
+const puppeteer = require('puppeteer');
 const cheerio = require('cheerio');
 
 const lirikApi = async (query) => {
